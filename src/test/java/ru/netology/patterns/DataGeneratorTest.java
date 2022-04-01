@@ -43,5 +43,4 @@ class DataGeneratorTest {
         $("[data-test-id=\"success-notification\"]")
                 .shouldHave(Condition.text("Успешно!"), Duration.ofSeconds(4));
     }
-
 }
