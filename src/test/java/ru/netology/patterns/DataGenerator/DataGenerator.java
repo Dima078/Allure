@@ -1,4 +1,4 @@
-package ru.netology.patterns;
+package ru.netology.patterns.DataGenerator;
 
 import com.github.javafaker.Faker;
 
@@ -19,7 +19,9 @@ public class DataGenerator {
     }
 
     public static String generateCity(String locale) {
-        String city = faker.address().cityName();
+        String[] citis = {"Москва", "Калуга", "Абакан", "Владикавказ", "Воронеж", "Пермь", "Екатеринбург", "Ульяновск"};
+        int n = (int) Math.floor(Math.random() * citis.length);
+        String city = citis[n];
         return city;
     }
 
