@@ -36,8 +36,9 @@ class DeliveryTest {
         $("[data-test-id=phone] input").setValue(validUser.getPhone());
         $("[data-test-id=agreement]").click();
         $$("button").find(exactText("Запланировать")).click();
+        $("[data-test-id='success-notification'] .notification__title").should(visible, Duration.ofSeconds(4));
         $("[class='notification__content']")
-                .shouldHave(Condition.text("Встреча успешно забронирована на " + firstMeetingDate), Duration.ofSeconds(2));
+                .shouldHave(Condition.text("Встреча успешно забронирована на " + firstMeetingDate), Duration.ofSeconds(4));
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $x("//input[@type= 'tel']").val(secondMeetingDate);
         $$("button").find(exactText("Запланировать")).click();
