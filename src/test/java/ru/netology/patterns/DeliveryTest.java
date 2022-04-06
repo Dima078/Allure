@@ -38,12 +38,12 @@ class DeliveryTest {
         $$("button").find(exactText("Запланировать")).click();
         $("[data-test-id='success-notification'] .notification__title").should(visible, Duration.ofSeconds(4));
         $("[class='notification__content']")
-                .shouldHave(Condition.text("Встреча успешно забронирована на " + firstMeetingDate), Duration.ofSeconds(4));
+                .shouldHave(Condition.text("Встреча успешно запланирована на " + firstMeetingDate), Duration.ofSeconds(4));
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").val(secondMeetingDate);
         $$("button").find(exactText("Запланировать")).click();
         $("[data-test-id='replan-notification'] .button").should(visible, Duration.ofSeconds(8)).click();
         $("[class='notification__content']")
-                .shouldHave(Condition.text("Встреча успешно забронирована на " + secondMeetingDate), Duration.ofSeconds(4));
+                .shouldHave(Condition.text("Встреча успешно запланирована на " + secondMeetingDate), Duration.ofSeconds(4));
     }
 }
