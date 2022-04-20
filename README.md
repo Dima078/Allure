@@ -1,1 +1,0 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/dpgcb75ftd6jua03?svg=true)](https://ci.appveyor.com/project/Dima078/patterns)
